@@ -1,0 +1,153 @@
+body{
+    background-color: #e4f5f9;
+}
+
+.wrapper{
+    margin-left: 40%;
+    margin-block-start: 10%;
+}
+
+.button-container{
+    width: 300px;
+    padding: 20px 20px 20px 30px;
+    justify-content: center;
+}
+
+.button{
+    width: 80px;
+    height: 80px;
+    justify-content: center;
+    margin-inline-start: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.button-reset{
+    width: 80px;
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: monospace;
+    margin-block-start: 30px;
+    margin-inline-start: 140px;
+}
+
+.button-reset {
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.button-reset:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.button-reset:active {
+    color: #000
+}
+
+.button-reset:active:after {
+    background: transparent;
+}
+
+.button-reset:hover:before {
+    opacity: 1;
+}
+
+.button-reset:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+/* .button:hover{
+    box-shadow: 1px 2px 4px #222;
+} */
+
+.first {
+    font-size: 3rem;
+}
+p{
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 2rem;
+    margin-bottom: 0px;
+    margin-top: 2px;
+}
+p:first-of-type{
+    animation: appear 10s infinite;
+    animation: reveal 10s infinite;
+    animation-duration: 10s infinite;
+}
+/* span:first-child:first-of-type{
+    animation: appear 5s infinite;
+    animation: reveal 15s infinite;
+    font-size: 33px;
+    animation: slide 30s infinite;
+} */
+span{
+    white-space: nowrap;
+    animation: appear 0s infinite;
+    animation: reveal 0s infinite;
+    animation: slide 50s infinite;
+    font-size: 25px;
+    margin: 2px auto;
+    transition: ease-in-out 5s;
+}
+ @keyframes appear{
+    0%{opacity: 0;}
+    20%{opacity: 1;}
+    80%{opacity: 1;}
+    100%{opacity: 0;}
+}
+  @keyframes slide{
+    0%{margin-left:-800px;}
+    20%{margin-left:-800px;}
+    35%{margin-left:0px;}
+  100%{margin-left:0.5px;}
+}
+@keyframes reveal{
+    0%{opacity: 0.5; width: 0px;}
+    20%{opacity: 0.5; width: 0px;}
+    30%{width: 655px;}
+    80%{opacity: 0.5;}
+    100%{opacity: 0; width: 655px;}
+}
+@keyframes slide {
+    from{
+        margin-left: 1200px;
+    }
+    to{
+        margin-left: -100px;
+    }
+}
